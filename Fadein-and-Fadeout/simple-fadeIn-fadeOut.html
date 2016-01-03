@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Simple Fade in and Fade out</title>
+<script src="jquery-1.11.3.min.js"></script>
+
+<style>
+p{
+display:inline;}
+</style>
+
+<script>
+	$(document).ready(function(){
+		
+		$(".fade_out").click(function(){
+			$(".fade_out").fadeOut();		//fade out
+		})
+		$("p[class='fade_in']").click(function(){		//p[class='fade_in'] it is css selector that define the "p" element have "class=fade_in". you can also use same syntax as above define
+			$(".fade_in").fadeOut().fadeIn();	//first it fade out and then fade in
+		})
+	})
+</script>
+
+</head>
+
+<body>
+	<h1>Fade in and Fade out</h1>
+
+	Click to fade out name: <p class="fade_out">Hello Smart</p>
+	
+	<br />	<br />
+	
+	Click to fade out and fade in: <p class="fade_in">Hello Smart</p>
+	
+</body>
+</html>

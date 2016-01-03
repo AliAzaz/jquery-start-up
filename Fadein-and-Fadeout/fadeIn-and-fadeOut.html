@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Fade out and Fade in</title>
+<script src="jquery-1.11.3.min.js"></script>
+
+<style>
+div{
+	width:200px;
+	height:200px;
+	border:1px solid #000000;
+	text-align:center;
+	background-color:#FFFF33;			
+}
+div span{
+	position:relative;
+	top:30%;
+	font-size:50px;
+}
+</style>
+
+<script>
+	$(function(){
+		var i=0;
+
+//In this example i have define the callback function in fadeIn & fadeOut
+//the first argument define that fadeIn process can be done slow and in other argument return 5000 -> means that it fadeOut at speed of 5 seconds and i have also set the background color of box and name of span element
+
+		$("div").click(function(){
+			if(i==0){
+			$("div").fadeOut("slow",function(){ 
+				$("div").css("background-color","#33FF33");
+				$("span").text("Fawad").fadeOut("slow").fadeIn();	
+				
+			return 5000; 
+			
+			}).fadeIn();
+			i++;	
+			}
+			else if(i==1){
+			$("div").fadeOut("slow",function(){ 
+				$("div").css("background-color","#00FFFF");
+				$("span").text("Shoaib").fadeOut("slow").fadeIn();	
+				
+			return 5000; 
+			
+			}).fadeIn();	
+			i++;
+			}
+			
+			else{
+			$("div").fadeOut("slow",function(){ 
+				$("div").css("background-color","#FFFF33");
+				$("span").text("Ali").fadeOut("slow").fadeIn();	
+				
+			return 5000; 
+			
+			}).fadeIn();	
+			i=0;
+			}
+			
+		})
+	})
+</script>
+
+</head>
+
+<body>
+
+<p>Click on box</p>
+
+<div>
+	<span>ALI</span>
+</div>
+
+</body>
+</html>
