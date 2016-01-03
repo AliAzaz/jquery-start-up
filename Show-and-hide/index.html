@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Show and hide</title>
+
+<script src="jquery-1.11.3.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){
+			//$("p").hide();		//directly hide p element
+			
+			
+			//To hide "p" after button click
+			
+			/*
+				#btn_hide --> "#" is placed because i have created id of button. 
+				for access through class" .btn_hide "
+			
+			$("#btn_hide").click(function(){	
+				$("p").hide();
+			})
+			
+			*/
+			
+			//check if p is hide then show else not show
+			
+			/*
+			$("#btn_hide").click(function(){
+				$("p").toggle();	//toggle is work as like blink -> means hide show
+			});
+			*/
+			
+			var flag=true;	//initialize boolean variable
+			/*flag is used to identify that the button is click first time or second
+			if the button click first time it will check condition of "if" and go and change 
+			the value of flag to false -> it means that the button clicked. When the 
+			next time it will check the condition and check the flag is false -> consider the button 
+			is clicked then. and it will go toward the "else" loop.
+			*/
+			
+			$("#btn_hide").click(function(){
+				if(flag==true){
+					$("p").hide();
+					flag=false;
+					$("#btn_hide").text("Show p"); //change the name of button by using function " $(btn_id or class).text(something)"
+				}
+				else{
+					$("p").show();	//to show the p element
+					flag=true;
+					$("#btn_hide").text("Hide p");
+				}
+			})
+			
+
+			
+			
+	});
+	
+	
+	
+</script>
+
+</head>
+<body>
+	
+	<h1>How to hide "p" tag</h1>
+	<p>Hello world</p>
+	<button id="btn_hide"> Hide p </button>	<!-- or <button class="btn_hide">Hide p </button> -->
+	
+</body>
+</html>
