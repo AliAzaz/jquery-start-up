@@ -25,16 +25,14 @@ div span{
 		var i=0;
 
 //In this example i have define the callback function in fadeIn & fadeOut
-//the first argument define that fadeIn process can be done slow and in other argument return 5000 -> means that it fadeOut at speed of 5 seconds and i have also set the background color of box and name of span element
+//the first argument define the fadeIn process will be done slow and in other argument i have set the background color of box and name of span element
 
 		$("div").click(function(){
 			if(i==0){
 			$("div").fadeOut("slow",function(){ 
 				$("div").css("background-color","#33FF33");
 				$("span").text("Fawad").fadeOut("slow").fadeIn();	
-				
-			return 5000; 
-			
+
 			}).fadeIn();
 			i++;	
 			}
@@ -42,9 +40,7 @@ div span{
 			$("div").fadeOut("slow",function(){ 
 				$("div").css("background-color","#00FFFF");
 				$("span").text("Shoaib").fadeOut("slow").fadeIn();	
-				
-			return 5000; 
-			
+
 			}).fadeIn();	
 			i++;
 			}
@@ -53,9 +49,7 @@ div span{
 			$("div").fadeOut("slow",function(){ 
 				$("div").css("background-color","#FFFF33");
 				$("span").text("Ali").fadeOut("slow").fadeIn();	
-				
-			return 5000; 
-			
+
 			}).fadeIn();	
 			i=0;
 			}
